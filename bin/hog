@@ -1,0 +1,1 @@
+bjobs -u all | tr -s ' ' | cut -d' ' -f2 | grep -v USER | sort | uniq -c | sort -nr

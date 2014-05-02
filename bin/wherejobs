@@ -1,0 +1,9 @@
+if [ $* ];
+then
+    thisuser=$*
+else
+    thisuser=$USER
+fi
+bjobs -u $thisuser | grep RUN | tr -s ' ' | cut -d' ' -f6 | sort | uniq -c | sort
+total=`bjobs -u $thisuser | grep RUN | tr -s ' ' | cut -d' ' -f6 | sort | uniq -c | sort |tr -s ' '|cut -d' ' -f2| paste -sd+ | bc`
+echo "Total: $total"
