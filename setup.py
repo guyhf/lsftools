@@ -27,4 +27,3 @@ setup(
         'bin/wherejobs'
     ]
 )
-)
