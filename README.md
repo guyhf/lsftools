@@ -1,14 +1,22 @@
+LSFTOOLS
+========
 A python library with a set up tools to help in submitting and monitoring jobs
 using LSF.
 
+Installation
+------------
+    pip install git+git://github.com/guyhf/lsftools
+
+Scripts
+-------
 Also included are some scripts to summarize the queue:
 
   * hog : report on number of jobs per user
   * hogrun : report on number of currently running jobs
   * wherejobs : report on whos jobs are running on which nodes
 
-To use lsftools:
-
+Usage
+-----
     import lsftools
   
     commands = ["python myscript -n %d" % i for i in range(1,1000)]
@@ -19,5 +27,5 @@ To use lsftools:
 
 Other functions:
 
-    run_commands(commands, filenames)
-    run_commands_async(commands, filenames)
+    lsftools.run_commands(commands, filenames)
+    lsftools.run_commands_async(commands, filenames)
